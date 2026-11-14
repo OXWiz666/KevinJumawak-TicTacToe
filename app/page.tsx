@@ -121,7 +121,7 @@ export default function Home() {
           <div className="game-topline">
             <span className="round-label">ROUND <strong>{String(round).padStart(2, "0")}</strong></span>
             <span className="best-of">BEST FRIENDS. WORST LOSERS.</span>
-            <button className="reset-link" onClick={resetMatch} type="button" aria-label="Reset scores and start a new match">RESET MATCH <span>?</span></button>
+            <button className="reset-link" onClick={resetMatch} type="button" aria-label="Reset scores and start a new match">RESET MATCH <span>&#8635;</span></button>
           </div>
 
           <div className="score-row" aria-label="Scoreboard">
@@ -164,7 +164,7 @@ export default function Home() {
                 );
               })}
             </div>
-            <div className="board-footer"><span>THINK AHEAD. STAY SHARP.</span><span>DRAWN TOGETHER <span className="tiny-heart"></span></span></div>
+            <div className="board-footer"><span>THINK AHEAD. STAY SHARP.</span><span>DRAWN TOGETHER <span className="tiny-heart">&#9829;</span></span></div>
           </div>
 
           <div className={`result-bar${isFinished ? " result-visible" : ""}`} aria-live="polite">
@@ -174,7 +174,7 @@ export default function Home() {
         </section>
 
         <div className="action-row">
-          <button className="new-game-button" onClick={newGame} type="button"><span>New game</span><span className="button-arrow">?</span></button>
+          <button className="new-game-button" onClick={newGame} type="button"><span>New game</span><span className="button-arrow">&#8599;</span></button>
           <div className="keyboard-hint"><span className="keycap">1-9</span> TO PLAY <span className="hint-gap" /><span className="keycap">ESC</span> NEW ROUND</div>
         </div>
 
@@ -184,8 +184,8 @@ export default function Home() {
       {isFinished && (
         <div className="result-overlay" role="presentation">
           <section className={`result-dialog${isDraw ? " draw-dialog" : " win-dialog"}`} role="dialog" aria-modal="true" aria-labelledby="result-title" aria-describedby="result-description">
-            <span className="dialog-spark dialog-spark-one" aria-hidden="true">?</span>
-            <span className="dialog-spark dialog-spark-two" aria-hidden="true">?</span>
+            <span className="dialog-spark dialog-spark-one" aria-hidden="true">&#10035;</span>
+            <span className="dialog-spark dialog-spark-two" aria-hidden="true">&#10022;</span>
             <div className="dialog-icons">
               <span className={`dialog-icon${winner?.mark === "X" ? " dialog-icon-winner" : ""}`}><MarkIcon mark="X" /></span>
               <span className="dialog-vs">{isDraw ? "TIE" : "VS"}</span>
@@ -196,7 +196,7 @@ export default function Home() {
             <p id="result-description" className="dialog-copy">
               {isDraw ? "Nobody takes this one. Ready for a rematch?" : `Player ${winner?.mark === "X" ? "2" : "1"} loses this round. Time to settle it again?`}
             </p>
-            <button ref={playAgainRef} className="play-again-button" onClick={newGame} type="button"><span>Play again</span><span aria-hidden="true">?</span></button>
+            <button ref={playAgainRef} className="play-again-button" onClick={newGame} type="button"><span>Play again</span><span aria-hidden="true">&#8599;</span></button>
             <span className="dialog-round">ROUND {String(round).padStart(2, "0")} COMPLETE</span>
           </section>
         </div>
